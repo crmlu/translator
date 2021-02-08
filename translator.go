@@ -191,6 +191,11 @@ func findVowel(word string) (int, bool) {
 }
 
 func translate(word string) (translation string) {
+	//skip ' in words
+	if strings.Contains(word, "'") {
+		return ""
+	}
+
 	word = strings.ToLower(word)
 	vowelPos, result := findVowel(word)
 
